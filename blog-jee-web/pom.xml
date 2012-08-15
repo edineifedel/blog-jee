@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>blog-jee-web</artifactId>
+  <packaging>war</packaging>
+
+  	<parent>
+		<groupId>br.com.flanders.blog</groupId>
+		<artifactId>blog-jee</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	
+	<dependencies>
+		<dependency>
+			<groupId>br.com.flanders.blog</groupId>
+			<artifactId>blog-jee-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.flanders.blog</groupId>
+			<artifactId>blog-jee-ejb</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-compiler-plugin</artifactId>
+			    <configuration>
+			        <source>1.6</source>
+			        <target>1.6</target>
+			    </configuration>
+			</plugin>
+        </plugins>
+	</build>
+</project>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.flanders.blog</groupId>
+	<artifactId>blog-jee</artifactId>
+	<packaging>pom</packaging>
+	<name>blog-jee</name>
+	<version>1.0-SNAPSHOT</version>
+
+	<modules>
+		<module>blog-jee-api</module>
+		<module>blog-jee-ejb</module>
+		<module>blog-jee-web</module>
+	</modules>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>6.0</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<build>
+		<pluginManagement>
+	        <plugins>
+		        <!-- <plugin>
+	                <artifactId>maven-eclipse-plugin</artifactId>
+	                <configuration>
+	                        <wtpversion>2.0</wtpversion>
+	                </configuration>
+		        </plugin> -->
+	         	<plugin>
+	                <groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-eclipse-plugin</artifactId>
+	                <version>2.5.1</version>
+	                <configuration>
+	                    <ajdtVersion>none</ajdtVersion>
+	                    <wtpversion>2.0</wtpversion>
+	                </configuration>
+				</plugin>
+				<plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-compiler-plugin</artifactId>
+				    <version>2.0.2</version>
+				    <configuration>
+				        <source>1.6</source>
+				        <target>1.6</target>
+				    </configuration>
+				</plugin>
+	        </plugins>
+		</pluginManagement>
+	</build>
+	
+	<repositories>
+	    <repository>
+	        <id>maven2-repository.dev.java.net</id>
+	        <name>Java.net Repository for Maven</name>
+	        <url>http://download.java.net/maven/2/</url>
+	        <layout>default</layout>
+	    </repository>
+	</repositories>
+	
+</project>
