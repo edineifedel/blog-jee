@@ -9,7 +9,7 @@
 
 	<modules>
 		<module>blog-jee-api</module>
-		<module>blog-jee-ejb</module>
+		<module>blog-jee-core</module>
 		<module>blog-jee-web</module>
 	</modules>
 	

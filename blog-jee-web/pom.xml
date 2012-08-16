@@ -18,7 +18,7 @@
 		</dependency>
 		<dependency>
 			<groupId>br.com.flanders.blog</groupId>
-			<artifactId>blog-jee-ejb</artifactId>
+			<artifactId>blog-jee-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		
