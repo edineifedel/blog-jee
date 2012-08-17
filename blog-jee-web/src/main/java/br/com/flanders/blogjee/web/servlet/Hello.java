@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import br.com.flanders.blogjee.ejb.HelloService;
+import br.com.flanders.blogjee.services.HelloService;
 import br.com.flanders.blogjee.utils.TimeProviderUtils;
 
 /**
