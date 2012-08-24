@@ -4,7 +4,6 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
@@ -17,10 +16,18 @@ public class Post {
 	private String body;
 	private List<Comment> comments;
 
+	public Post() {
+		super();
+	}
+
+	public Post(String title, String body) {
+		super();
+		this.title = title;
+		this.body = body;
+	}
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	// @SequenceGenerator(name = "post_seq", sequenceName = "post_seq",
-	// allocationSize = 1)
+	@GeneratedValue
 	public Integer getId() {
 		return id;
 	}
