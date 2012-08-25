@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+<title>Login</title>
+</head>
+
+<style type="text/css">
+#centerDiv {
+	height: 100%;
+	width: 100%;
+	margin-left: 10%;
+	margin-top: 10%;
+}
+</style>
+
+<h:body>
+	<div id="centerDiv">
+		<h:form>
+			<table>
+				<tr>
+					<td><h:outputText value="Nome de Usuário" /></td>
+					<td><h:inputText value="#{loginBean.user.username}" /></td>
+				</tr>
+				<tr>
+					<td><h:outputText value="Senha" /></td>
+					<td><h:inputSecret id="pwd" value="#{loginBean.user.password}" /></td>
+
+				</tr>
+				<tr>
+					<td></td>
+					<td><h:commandButton value="Entrar"
+							action="#{loginBean.login}" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</div>
+</h:body>
+</html>
