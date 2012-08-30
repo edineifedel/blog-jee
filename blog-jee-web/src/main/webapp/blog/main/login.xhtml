@@ -19,24 +19,15 @@
 
 <h:body>
 	<div id="centerDiv">
-		<h:form>
-			<table>
-				<tr>
-					<td><h:outputText value="Nome de Usuário" /></td>
-					<td><h:inputText value="#{loginController.user.username}" /></td>
-				</tr>
-				<tr>
-					<td><h:outputText value="Senha" /></td>
-					<td><h:inputSecret id="pwd" value="#{loginController.user.password}" /></td>
-
-				</tr>
-				<tr>
-					<td></td>
-					<td><h:commandButton value="Entrar"
-							action="#{loginController.login}" /></td>
-				</tr>
-			</table>
-		</h:form>
+		<ui:composition>
+			<form action="j_security_check" method="post">
+				<label for="j_username">Nome de Usuário:</label> 
+				<input type="text" name="j_username" /> <br /> 
+				<label for="j_password">Senha:</label>
+				<input type="password" name="j_password" /> <br /> 
+				<input type="submit" value="Entrar" id="Submit" />
+			</form>
+		</ui:composition>
 	</div>
 </h:body>
 </html>
