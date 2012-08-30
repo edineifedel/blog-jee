@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/asf/!svn/ver/1355977/openejb/trunk/openejb/examples/realm-in-tomee/src/main/tomee/conf
+END
+server.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/asf/!svn/ver/1338458/openejb/trunk/openejb/examples/realm-in-tomee/src/main/tomee/conf/server.xml
+END
+tomee.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/1355977/openejb/trunk/openejb/examples/realm-in-tomee/src/main/tomee/conf/tomee.xml
+END

@@ -10,6 +10,8 @@
 		<class>br.com.flanders.blogjee.entities.User</class>
 		<class>br.com.flanders.blogjee.entities.Post</class>
 		<class>br.com.flanders.blogjee.entities.Comment</class>
+		<class>br.com.flanders.blogjee.entities.Role</class>
+		<class>br.com.flanders.blogjee.entities.User</class>
 
 		<properties>
 			<!-- https://issues.apache.org/jira/browse/OPENJPA-94

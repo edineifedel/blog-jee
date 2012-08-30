@@ -1,4 +1,4 @@
-package br.com.flanders.blogjee.web.views;
+package br.com.flanders.blogjee.web.controller;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;

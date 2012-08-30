@@ -10,7 +10,7 @@ import br.com.flanders.blogjee.entities.User;
 @Stateless
 public class HelloService {
 
-	@PersistenceContext
+	@PersistenceContext(unitName = "blog-jee-pu")
 	private EntityManager em;
 
 	public String hello(String name) {

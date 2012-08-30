@@ -1,4 +1,4 @@
-package br.com.flanders.blogjee.web.views;
+package br.com.flanders.blogjee.web.controller;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import br.com.flanders.blogjee.entities.Post;
 
 @ManagedBean
 @RequestScoped
-public class PostBean implements Serializable {
+public class PostController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private static List<Post> posts = Arrays.asList(new Post[] { new Post("Meu primeiro post", "blahblah"),

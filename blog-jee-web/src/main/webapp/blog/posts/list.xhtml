@@ -38,13 +38,13 @@
 }
 </style>
 </h:head>
-Olá <b><font size="4">#{loginBean.user.username}</font></b>
+Olá <b><font size="4">#{loginController.user.username}</font></b>
 <h2>Listagem Posts</h2>
 <h:body class="center">
-	<h:dataTable value="#{postBean.posts}" styleClass="order-table"
+	<h:dataTable value="#{postController.posts}" styleClass="order-table"
 		headerClass="order-table-header"
 		rowClasses="order-table-odd-row,order-table-even-row" var="o"
-		rendered="#{not empty postBean.posts}">
+		rendered="#{not empty postController.posts}">
 
 		<h:column>
 			<f:facet name="header">Id</f:facet>
@@ -73,7 +73,7 @@ Olá <b><font size="4">#{loginBean.user.username}</font></b>
 
 	</h:dataTable>
 	<h:outputText value="Não há posts no momento"
-		rendered="#{empty postBean.posts}" />
+		rendered="#{empty postController.posts}" />
 
 </h:body>
 

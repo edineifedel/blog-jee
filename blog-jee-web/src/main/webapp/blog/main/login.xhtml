@@ -23,17 +23,17 @@
 			<table>
 				<tr>
 					<td><h:outputText value="Nome de Usuário" /></td>
-					<td><h:inputText value="#{loginBean.user.username}" /></td>
+					<td><h:inputText value="#{loginController.user.username}" /></td>
 				</tr>
 				<tr>
 					<td><h:outputText value="Senha" /></td>
-					<td><h:inputSecret id="pwd" value="#{loginBean.user.password}" /></td>
+					<td><h:inputSecret id="pwd" value="#{loginController.user.password}" /></td>
 
 				</tr>
 				<tr>
 					<td></td>
 					<td><h:commandButton value="Entrar"
-							action="#{loginBean.login}" /></td>
+							action="#{loginController.login}" /></td>
 				</tr>
 			</table>
 		</h:form>

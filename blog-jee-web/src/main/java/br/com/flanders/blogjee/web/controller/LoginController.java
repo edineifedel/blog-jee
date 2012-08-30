@@ -1,4 +1,4 @@
-package br.com.flanders.blogjee.web.views;
+package br.com.flanders.blogjee.web.controller;
 
 import java.io.Serializable;
 import javax.faces.application.FacesMessage;
@@ -10,7 +10,7 @@ import br.com.flanders.blogjee.entities.User;
 
 @ManagedBean
 @RequestScoped
-public class LoginBean implements Serializable {
+public class LoginController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Inject
