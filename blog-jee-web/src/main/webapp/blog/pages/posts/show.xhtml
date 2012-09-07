@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Visualização Post</title>
+	<style type="text/css">
+</style>
+</h:head>
+<body>
+	<t:saveState value="#{postController.post}" />
+	<p>
+		<h1>#{postController.post.title}</h1>
+	</p>
+	<p>
+		<h4>#{postController.post.body}</h4>
+	</p>
+	<h:form>
+		<div>
+			<h:commandLink style="margin-right: 20px"
+				action="#{postController.listPosts}" value="Ver todos" />
+			<h:commandLink style="margin-right: 20px"
+				action="#{postController.newPost}" value="Novo" />
+			<h:commandLink style="margin-right: 20px"
+				action="#{postController.updatePost}" value="Atualizar" />
+		</div>
+	</h:form>
+	<p>
+		<h3>Comentários</h3>
+	</p>
+
+	<h:form id="comments">
+		<ul>
+			<ui:repeat value="#{postController.post.comments}" var="comment">
+				<li>#{comment.comment}</li>
+			</ui:repeat>
+		</ul>
+	</h:form>
+
+	<h3>New Comment</h3>
+	<h:form id="formComment">
+		<table>
+			<tr>
+				<td valign="top">Comment :</td>
+				<td><h:inputTextarea id="commentTxtArea"
+						value="#{postController.comment.comment}" cols="30" rows="10" /></td>
+			</tr>
+		</table>
+		<h:commandButton value="Add Comment"
+			action="#{postController.addComment}">
+			<f:ajax event="action" onevent="clearField" execute="@form"
+				render="comments" />
+		</h:commandButton>
+	</h:form>
+	<script src="${request.contextPath}/blog/js/jquery.js"></script>
+	<script type="text/javascript">
+		function clearField() {
+			$('#formComment\\:commentTxtArea').val('');
+		}
+	</script>
+</body>
+</html>

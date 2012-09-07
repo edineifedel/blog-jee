@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<style type="text/css">
+.center {
+	height: 100%;
+	width: 100%;
+	margin-left: 10%;
+	margin-top: 10%;
+}
+
+.order-table {
+	border-collapse: collapse;
+}
+
+.order-table-header {
+	text-align: center;
+	background: none repeat scroll 0 0 #E5E5E5;
+	border-bottom: 1px solid #BBBBBB;
+	padding: 16px;
+}
+
+.order-table-odd-row {
+	text-align: center;
+	background: none repeat scroll 0 0 #FFFFFFF;
+	border-top: 1px solid #BBBBBB;
+}
+
+.order-table-even-row {
+	text-align: center;
+	background: none repeat scroll 0 0 #F9F9F9;
+	border-top: 1px solid #BBBBBB;
+}
+</style>
+</h:head>
+Olá
+<b><font size="4">#{loginController.user.username}</font></b>
+<h2>Listagem Posts</h2>
+<h:body class="center">
+
+	<h:form>
+		<h:dataTable value="#{postController.posts}" styleClass="order-table"
+			headerClass="order-table-header"
+			rowClasses="order-table-odd-row,order-table-even-row" var="post"
+			rendered="#{not empty postController.posts}">
+
+			<h:column>
+				<f:facet name="header">Id</f:facet>
+				<h:outputText value="#{post.id}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Título</f:facet>
+				<h:outputText value="#{post.title}" />
+			</h:column>
+
+			<h:column>
+
+				<h:commandButton action="#{postController.showPost}"
+					image="/static/images/show.png" title="Exibir Post">
+					<f:setPropertyActionListener target="#{postController.post}"
+						value="#{post}" />
+				</h:commandButton>
+			</h:column>
+
+			<h:column>
+				<h:commandButton action="#{some_action}"
+					image="/static/images/update.png" title="Atualizar Post" />
+			</h:column>
+
+			<h:column>
+				<h:commandButton action="#{some_action}"
+					image="/static/images/delete.png" title="Excluir Post" />
+			</h:column>
+
+		</h:dataTable>
+	</h:form>
+	<h:outputText value="Não há posts no momento"
+		rendered="#{empty postController.posts}" />
+</h:body>
+
+</html>
