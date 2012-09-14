@@ -57,7 +57,7 @@ public class Post implements Serializable {
 		this.body = body;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "post", fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	public List<Comment> getComments() {
 		return comments;
 	}

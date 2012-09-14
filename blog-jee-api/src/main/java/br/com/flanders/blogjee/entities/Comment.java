@@ -1,11 +1,10 @@
 package br.com.flanders.blogjee.entities;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.Lob;
 
 @Entity
 public class Comment implements Serializable {
@@ -13,7 +12,6 @@ public class Comment implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String comment;
-	private Post post;
 
 	public Comment() {
 		super();
@@ -34,21 +32,12 @@ public class Comment implements Serializable {
 		this.id = id;
 	}
 
-	// @Lob
+	@Lob
 	public String getComment() {
 		return comment;
 	}
 
 	public void setComment(String comment) {
 		this.comment = comment;
-	}
-
-	@ManyToOne(cascade = CascadeType.ALL)
-	public Post getPost() {
-		return post;
-	}
-
-	public void setPost(Post post) {
-		this.post = post;
 	}
 }
