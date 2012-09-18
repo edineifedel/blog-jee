@@ -18,14 +18,14 @@ public class PostController implements Serializable {
 	private PostService postService;
 	private Post post = new Post();
 	private Comment comment = new Comment();
-	private static List<Post> posts;
+	private List<Post> posts;
 
 	public List<Post> getPosts() {
 		posts = postService.findAll();
 		return posts;
 	}
 
-	public String showPost() {
+	public String viewPost() {
 		return "show";
 	}
 
@@ -34,11 +34,26 @@ public class PostController implements Serializable {
 	}
 
 	public String newPost() {
-		return null;
+		return "new";
+	}
+
+	public String createPost() {
+		postService.save(post);
+		return "list";
 	}
 
 	public String updatePost() {
-		return null;
+		postService.save(post);
+		return "list";
+	}
+
+	public String removePost() {
+		postService.remove(post);
+		return "list";
+	}
+
+	public String viewPostUpdate() {
+		return "update";
 	}
 
 	public void addComment() {

@@ -40,7 +40,7 @@
 </h:head>
 Olá
 <b><font size="4">#{loginController.user.username}</font></b>
-<h2>Listagem Posts</h2>
+<h2>Posts</h2>
 <h:body class="center">
 
 	<h:form>
@@ -55,33 +55,44 @@ Olá
 			</h:column>
 
 			<h:column>
-				<f:facet name="header">Título</f:facet>
+				<f:facet name="header">Title</f:facet>
 				<h:outputText value="#{post.title}" />
 			</h:column>
 
 			<h:column>
 
-				<h:commandButton action="#{postController.showPost}"
-					image="/static/images/show.png" title="Exibir Post">
+				<h:commandButton action="#{postController.viewPost}"
+					image="/static/images/show.png" title="View Post">
 					<f:setPropertyActionListener target="#{postController.post}"
 						value="#{post}" />
 				</h:commandButton>
 			</h:column>
 
 			<h:column>
-				<h:commandButton action="#{some_action}"
-					image="/static/images/update.png" title="Atualizar Post" />
+				<h:commandButton action="#{postController.viewPostUpdate}"
+					image="/static/images/update.png" title="Update Post">
+					<f:setPropertyActionListener target="#{postController.post}"
+						value="#{post}" />
+				</h:commandButton>
 			</h:column>
 
 			<h:column>
-				<h:commandButton action="#{some_action}"
-					image="/static/images/delete.png" title="Excluir Post" />
+				<h:commandButton action="#{postController.removePost}"
+					image="/static/images/delete.png" title="Remove Post">
+					<f:setPropertyActionListener target="#{postController.post}"
+						value="#{post}" />
+				</h:commandButton>
 			</h:column>
 
 		</h:dataTable>
 	</h:form>
-	<h:outputText value="Não há posts no momento"
+	<h:outputText value="No posts at the moment"
 		rendered="#{empty postController.posts}" />
+	<br/><br/>
+	<h:form>
+		<h:commandLink style="margin-right: 20px"
+			action="#{postController.newPost}" value="New Post" />
+	</h:form>
 </h:body>
 
 </html>

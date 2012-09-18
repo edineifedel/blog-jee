@@ -7,7 +7,7 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<title>Visualização Post</title>
+	<title>View Posts</title>
 	<style type="text/css">
 </style>
 </h:head>
@@ -22,15 +22,15 @@
 	<h:form>
 		<div>
 			<h:commandLink style="margin-right: 20px"
-				action="#{postController.listPosts}" value="Ver todos" />
+				action="#{postController.listPosts}" value="All Posts" />
 			<h:commandLink style="margin-right: 20px"
-				action="#{postController.newPost}" value="Novo" />
+				action="#{postController.newPost}" value="New Post" />
 			<h:commandLink style="margin-right: 20px"
-				action="#{postController.updatePost}" value="Atualizar" />
+				action="#{postController.viewPostUpdate}" value="Update Post" />
 		</div>
 	</h:form>
 	<p>
-		<h3>Comentários</h3>
+		<h3>Comments</h3>
 	</p>
 
 	<h:form id="comments">
