@@ -22,13 +22,13 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>javax</groupId>
+			<groupId>org.apache.openejb</groupId>
 			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.myfaces.tomahawk</groupId>
 			<artifactId>tomahawk20</artifactId>
-			<version>1.1.13</version>
 		</dependency>
 	</dependencies>
 

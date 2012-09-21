@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ 	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+
+	<persistence-unit name="blog-jee-pu">
+		<jta-data-source>blog-jee-ds</jta-data-source>
+
+		<class>br.com.flanders.blogjee.entities.User</class>
+		<class>br.com.flanders.blogjee.entities.Post</class>
+		<class>br.com.flanders.blogjee.entities.Comment</class>
+		<class>br.com.flanders.blogjee.entities.Role</class>
+		<class>br.com.flanders.blogjee.entities.User</class>
+
+		<properties>
+			<!-- https://issues.apache.org/jira/browse/OPENJPA-94
+			OpenJPA support drop-create schema -->
+			<property name="openjpa.jdbc.SynchronizeMappings"
+				value="buildSchema(SchemaAction=&apos;add,deleteTableContents&apos;,ForeignKeys=true)" />
+		</properties>
+	</persistence-unit>
+</persistence>
