@@ -6,11 +6,11 @@ Blog-JEE is a sample application employing some JEE technologies, such as EJB, J
 
 To test it:
 
-	On root application blog-jee:
+On root application blog-jee:
 	
 	mvn clean install
 
-	On web module blog-jee/blog-jee-web
+On web module blog-jee/blog-jee-web
 
     mvn clean package tomee:run
 
@@ -20,7 +20,7 @@ A datasource is defined in tomee.xml:
 
     <Resource id="blog-jee-ds" type="DataSource" />
     
-    DB uses HSQLDB in memory.
+DB uses HSQLDB in memory.
 
 Then this datasource is referenced in server.xml:
 
@@ -29,5 +29,5 @@ To initialize the datasource (for the test) it's used EJB (br.com.flanders.blogj
 
 ## Test it
 
-Go to http://localhost:8080/blog-jee-web-1.0-SNAPSHOT/ 
-then connect using the login/password admin/admin. You should see the posts.
+Go to http://localhost:8080/blog-jee-web-1.0-SNAPSHOT/
+Connect using the login/password admin/admin. You should see the posts.
