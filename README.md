@@ -30,4 +30,5 @@ To initialize the datasource (for the test) it's used EJB (br.com.flanders.blogj
 ## Test it
 
 Go to http://localhost:8080/blog-jee-web-1.0-SNAPSHOT/
+
 Connect using the login/password admin/admin. You should see the posts.
