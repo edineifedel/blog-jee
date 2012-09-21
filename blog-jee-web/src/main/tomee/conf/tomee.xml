@@ -11,8 +11,7 @@
 	language governing permissions and limitations under the License. -->
 <tomee>
 	<Resource id="blog-jee-ds" type="DataSource">
-		JdbcDriver
-		org.hsqldb.jdbcDriver
+		JdbcDriver org.hsqldb.jdbcDriver
 		JdbcUrl jdbc:hsqldb:mem:blog-jee
 		UserName sa
 		Password
