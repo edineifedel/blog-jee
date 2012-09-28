@@ -1,52 +1,76 @@
-/**
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- */
 package br.com.flanders.blogjee.services;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import java.util.List;
 import javax.ejb.embeddable.EJBContainer;
 import javax.inject.Inject;
-import org.junit.AfterClass;
+import javax.naming.NamingException;
+import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+import br.com.flanders.blogjee.entities.Comment;
+import br.com.flanders.blogjee.entities.Post;
 
 public class PostServiceBeanTest {
 
-	private static EJBContainer container;
+	private EJBContainer container;
 	@Inject
 	private PostService postService;
 
-	@BeforeClass
-	public static void start() {
-		container = EJBContainer.createEJBContainer();
-	}
-
 	@Before
 	public void setUp() throws Exception {
+		startContainer();
+		createSomePosts();
+	}
+
+	private void startContainer() throws NamingException {
+		container = EJBContainer.createEJBContainer();
 		container.getContext().bind("inject", this);
 	}
 
-	@Test
-	public void test() {
-		assertTrue(true);
+	private void createSomePosts() {
+		Post post1 = createPost("Title post 1", "Body post 1", "a", "b");
+		Post post2 = createPost("Title post 2", "Body post 2", "c", "d");
+		postService.save(post1);
+		postService.save(post2);
 	}
 
-	@AfterClass
-	public static void stop() {
+	@Test
+	public void testFindAll() {
+		List<Post> posts = postService.findAll();
+		assertEquals(2, posts.size());
+	}
+
+	@Test
+	public void testSave() {
+		Post post = createPost("Title post 3", "Body post 3", "e", "f");
+		Post savedPost = postService.save(post);
+		assertNotNull(savedPost);
+		assertNotNull(savedPost.getId());
+		assertEquals(2, savedPost.getComments().size());
+		List<Post> posts = postService.findAll();
+		assertEquals(3, posts.size());
+	}
+
+	@Test
+	public void testRemove() {
+		Post anyPost = postService.findAll().get(0);
+		postService.remove(anyPost);
+		List<Post> posts = postService.findAll();
+		assertEquals(1, posts.size());
+	}
+
+	private Post createPost(String title, String body, String... comments) {
+		Post post = new Post(title, body);
+		for (String comment : comments) {
+			post.addComment(new Comment(comment));
+		}
+		return post;
+	}
+
+	@After
+	public void stop() {
 		container.close();
 	}
 }
