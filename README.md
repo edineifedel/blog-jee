@@ -4,8 +4,6 @@ Blog-JEE is a sample application employing some JEE technologies, such as EJB, J
 
 ## Quick start
 
-Download:
-
 Clone project:
 
 	git://github.com/neigroove/blog-jee.git
