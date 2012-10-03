@@ -6,7 +6,7 @@ Blog-JEE is a sample application employing some JEE technologies, such as EJB, J
 
 Clone project:
 
-	git://github.com/neigroove/blog-jee.git
+	git clone git://github.com/neigroove/blog-jee.git
 
 To test it:
 
