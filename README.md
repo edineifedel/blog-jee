@@ -4,6 +4,12 @@ Blog-JEE is a sample application employing some JEE technologies, such as EJB, J
 
 ## Quick start
 
+Download:
+
+Clone project:
+
+	git://github.com/neigroove/blog-jee.git
+
 To test it:
 
 On root application blog-jee:
@@ -20,7 +26,7 @@ A datasource is defined in tomee.xml:
 
     <Resource id="blog-jee-ds" type="DataSource" />
     
-DB uses HSQLDB in memory.
+Blog uses DB (HSQLDB) in memory.
 
 Then this datasource is referenced in server.xml:
 
