@@ -17,7 +17,7 @@
 			<!-- https://issues.apache.org/jira/browse/OPENJPA-94
 			OpenJPA support drop-create schema -->
 			<property name="openjpa.jdbc.SynchronizeMappings"
-				value="buildSchema(SchemaAction=&apos;add,deleteTableContents&apos;,ForeignKeys=true)" />
+				value="buildSchema(SchemaAction=&apos;add,deleteTableContents&apos;,ForeignKeys=true)" /> 
 		</properties>
 	</persistence-unit>
 </persistence>

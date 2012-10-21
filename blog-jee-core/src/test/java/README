@@ -1,0 +1,5 @@
+To run tests standalone (outside maven), it needs enable OpenJPA javaagent.
+
+VM arguments:
+
+-javaagent:<path>/openejb-javaagent-4.5.0.jar
