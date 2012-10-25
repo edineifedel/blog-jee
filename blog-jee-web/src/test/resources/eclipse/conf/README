@@ -1,0 +1,3 @@
+To run blog application in eclipse (TomEE embedded), copy two files (server.xml, context.xml) inside Servers folder.
+
+These files describe datasource and realm security.

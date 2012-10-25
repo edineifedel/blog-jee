@@ -24,8 +24,6 @@
 			<h:commandLink style="margin-right: 20px"
 				action="#{postController.listPosts}" value="All Posts" />
 			<h:commandLink style="margin-right: 20px"
-				action="#{postController.newPost}" value="New Post" />
-			<h:commandLink style="margin-right: 20px"
 				action="#{postController.viewPostUpdate}" value="Update Post" />
 		</div>
 	</h:form>
@@ -56,11 +54,7 @@
 				render="comments" />
 		</h:commandButton>
 	</h:form>
-	<script src="${request.contextPath}/blog/js/jquery.js"></script>
-	<script type="text/javascript">
-		function clearField() {
-			$('#formComment\\:commentTxtArea').val('');
-		}
-	</script>
+	<script src="${request.contextPath}/blog/js/jquery.js"/>
+	<script src="${request.contextPath}/blog/js/blog.js"/>
 </body>
 </html>
