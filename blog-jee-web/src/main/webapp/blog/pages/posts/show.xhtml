@@ -8,52 +8,55 @@
 
 <h:head>
 	<title>View Posts</title>
-	<style type="text/css">
-</style>
+	<link rel="stylesheet" href="${request.contextPath}/static/css/blog.css"/>
 </h:head>
 <body>
-	<t:saveState value="#{postController.post}" />
-	<p>
-		<h1>#{postController.post.title}</h1>
-	</p>
-	<p>
-		<h4>#{postController.post.body}</h4>
-	</p>
-	<h:form>
-		<div>
-			<h:commandLink style="margin-right: 20px"
-				action="#{postController.listPosts}" value="All Posts" />
-			<h:commandLink style="margin-right: 20px"
-				action="#{postController.viewPostUpdate}" value="Update Post" />
-		</div>
-	</h:form>
-	<p>
-		<h3>Comments</h3>
-	</p>
-
-	<h:form id="comments">
-		<ul>
-			<ui:repeat value="#{postController.post.comments}" var="comment">
-				<li>#{comment.comment}</li>
-			</ui:repeat>
-		</ul>
-	</h:form>
-
-	<h3>New Comment</h3>
-	<h:form id="formComment">
-		<table>
-			<tr>
-				<td valign="top">Comment :</td>
-				<td><h:inputTextarea id="commentTxtArea"
-						value="#{postController.comment.comment}" cols="30" rows="10" /></td>
-			</tr>
-		</table>
-		<h:commandButton value="Add Comment"
-			action="#{postController.addComment}">
-			<f:ajax event="action" onevent="clearField" execute="@form"
-				render="comments" />
-		</h:commandButton>
-	</h:form>
+	<div class="centerDiv">
+		<t:saveState value="#{postController.post}" />
+		<p>
+			<h1>#{postController.post.title}</h1>
+		</p>
+		<p>
+			<h4>#{postController.post.body}</h4>
+		</p>
+		<h:form>
+			<div>
+				<h:commandLink style="margin-right: 20px"
+					action="#{postController.listPosts}" value="All Posts" />
+				<h:commandLink style="margin-right: 20px"
+					action="#{postController.viewPostUpdate}" value="Update Post" />
+			</div>
+		</h:form>
+		<p>
+			<h3>Comments</h3>
+		</p>
+	
+		<h:form id="comments">
+			<ul>
+				<ui:repeat value="#{postController.post.comments}" var="comment">
+					<li>#{comment.comment}</li>
+				</ui:repeat>
+			</ul>
+		</h:form>
+	
+		<h3>New Comment</h3>
+		<h:form id="formComment">
+			<table>
+				<tr>
+					<td valign="top">Comment:</td>
+					<td><h:inputTextarea id="commentTxtArea"
+							value="#{postController.comment.comment}" cols="30" rows="10" /></td>
+				</tr>
+				<tr>
+					<td/>
+					<td><h:commandButton value="Add Comment" action="#{postController.addComment}">
+							<f:ajax event="action" onevent="clearField" execute="@form"	render="comments" />
+						</h:commandButton></td>
+				</tr>
+			</table>
+			
+		</h:form>
+	</div>
 	<script src="${request.contextPath}/blog/js/jquery.js"/>
 	<script src="${request.contextPath}/blog/js/blog.js"/>
 </body>

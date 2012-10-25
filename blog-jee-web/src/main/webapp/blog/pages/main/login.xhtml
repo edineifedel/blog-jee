@@ -15,16 +15,20 @@
 			top:50%;
 			margin:-75px 0 0 -135px;
 		}
+		
+		.span-block {
+			display: block; 
+		}
 	</style>
 </h:head>
 <h:body>
 	<div class="centerDiv">
 		<form action="j_security_check" method="post">
-			<label for="j_username">Nome de Usuário:</label> 
-			<input type="text" name="j_username" /> <br /> 
-			<label style="margin-left: 76px" for="j_password">Senha:</label>
-			<input type="password" name="j_password" /> <br /> 
-			<input style="margin-left: 126px" type="submit" value="Entrar" id="Submit" />
+			<span class="span-block"><label for="j_username">Nome de Usuário:</label></span>  
+			<span class="span-block"><input type="text" name="j_username" /> </span> 
+			<span class="span-block"><label for="j_password">Senha:</label></span> 
+			<span class="span-block"><input type="password" name="j_password" /> </span> 
+			<span class="span-block"><input type="submit" value="Entrar" id="Submit" /></span>
 		</form>
 	</div>
 </h:body>

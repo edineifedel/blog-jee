@@ -16,7 +16,7 @@ On root application blog-jee:
 
 On web module blog-jee/blog-jee-web
 
-    mvn clean package tomee:run
+    mvn tomee:run
 
 ## How does it work?
 

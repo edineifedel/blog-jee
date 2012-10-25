@@ -8,9 +8,9 @@
 <h:head>
 	<link rel="stylesheet" href="${request.contextPath}/static/css/blog.css"/>
 </h:head>
-<h2>Posts</h2>
 <h:body class="center">
-
+<div class="centerDiv">
+	<h2>Posts</h2>
 	<h:form>
 		<h:dataTable value="#{postController.posts}" styleClass="order-table"
 			headerClass="order-table-header"
@@ -61,6 +61,7 @@
 		<h:commandLink style="margin-right: 20px"
 			action="#{postController.newPost}" value="New Post" />
 	</h:form>
+</div>
 </h:body>
 
 </html>

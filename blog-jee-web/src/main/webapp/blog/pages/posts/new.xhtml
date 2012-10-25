@@ -8,31 +8,32 @@
 
 <h:head>
 	<title>New Post</title>
+	<link rel="stylesheet" href="${request.contextPath}/static/css/blog.css"/>
 </h:head>
 <body>
-	<h1>New Post</h1>
-	<h:form>
-		<table>
-			<tr>
-				<td valign="top">Title: </td>
-				<td><h:inputText value="#{postController.post.title}" /></td>
-			</tr>
-			<tr>
-				<td valign="top">Body :</td>
-				<td><h:inputTextarea id="commentTxtArea"
-						value="#{postController.post.body}" cols="30" rows="10" /></td>
-			</tr>
-		</table>
-		<h:commandButton value="Create post"
-			action="#{postController.createPost}">
-		</h:commandButton>
-	</h:form>
-	
-	<h:form>
-		<div>
-			<h:commandLink style="margin-right: 20px"
-				action="#{postController.listPosts}" value="All Posts" />
-		</div>
-	</h:form>
+	<div class="centerDiv">
+		<h1>New Post</h1>
+		<h:form>
+			<table>
+				<tr>
+					<td valign="top">Title: </td>
+					<td><h:inputText value="#{postController.post.title}" /></td>
+				</tr>
+				<tr>
+					<td valign="top">Body:</td>
+					<td><h:inputTextarea id="commentTxtArea"
+							value="#{postController.post.body}" cols="30" rows="10" /></td>
+				</tr>
+				<tr>
+					<td/>
+					<td><h:commandButton value="Create post" action="#{postController.createPost}"/></td>
+				</tr>
+				<tr>
+					<td/>
+					<td><h:commandLink style="margin-right: 20px" action="#{postController.listPosts}" value="All Posts" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</div>
 </body>
 </html>

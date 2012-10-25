@@ -8,33 +8,34 @@
 
 <h:head>
 	<title>Update Post</title>
+	<link rel="stylesheet" href="${request.contextPath}/static/css/blog.css"/>
 </h:head>
 <body>
-	<h1>Update Post</h1>
-	<t:saveState value="#{postController.post}" />
-
-	<h:form>
-		<table>
-			<tr>
-				<td valign="top">Title: </td>
-				<td><h:inputText value="#{postController.post.title}" /></td>
-			</tr>
-			<tr>
-				<td valign="top">Body :</td>
-				<td><h:inputTextarea id="commentTxtArea"
-						value="#{postController.post.body}" cols="30" rows="10" /></td>
-			</tr>
-		</table>
-		<h:commandButton value="Update post"
-			action="#{postController.updatePost}">
-		</h:commandButton>
-	</h:form>
+	<div class="centerDiv">
+		<h1>Update Post</h1>
+		<t:saveState value="#{postController.post}" />
 	
-	<h:form>
-		<div>
-			<h:commandLink style="margin-right: 20px"
-				action="#{postController.listPosts}" value="All Posts" />
-		</div>
-	</h:form>
+		<h:form>
+			<table>
+				<tr>
+					<td valign="top">Title: </td>
+					<td><h:inputText value="#{postController.post.title}" /></td>
+				</tr>
+				<tr>
+					<td valign="top">Body:</td>
+					<td><h:inputTextarea id="commentTxtArea"
+							value="#{postController.post.body}" cols="30" rows="10" /></td>
+				</tr>
+				<tr>
+					<td/>
+					<td><h:commandButton value="Update post" action="#{postController.updatePost}"/></td>
+				</tr>
+				<tr>
+					<td/>
+					<td><h:commandLink action="#{postController.listPosts}" value="All Posts" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</div>
 </body>
 </html>
